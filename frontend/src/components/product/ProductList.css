@@ -1,0 +1,193 @@
+.table__body {
+  overflow-x: auto;
+  max-width: 95%;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 20px;
+}
+
+.table__body::-webkit-scrollbar {
+  width: 0.5rem;
+  height: 0.5rem;
+}
+
+.table__body::-webkit-scrollbar-thumb {
+  border-radius: 0.5rem;
+  background-color: #0004;
+  visibility: hidden;
+}
+
+.table__body:hover::-webkit-scrollbar-thumb {
+  visibility: visible;
+}
+
+table {
+  border: 1px solid gray;
+  width: 100%;
+  margin-left: auto;
+  margin-right: auto;
+  overflow-x: scroll;
+  scroll-behavior: smooth;
+  position: relative;
+}
+
+table tbody tr {
+  border-bottom: 1px solid gray;
+  width: 100%;
+}
+
+table tbody tr td {
+  padding: 18px12px;
+}
+
+.table_image {
+  display: flex;
+  align-items: center;
+}
+
+table,
+th,
+td {
+  border-collapse: collapse;
+  padding: 1rem;
+  text-align: left;
+}
+
+thead th {
+  position: sticky;
+  top: 0;
+  left: 0;
+  background-color: #d5d1defe;
+  cursor: pointer;
+  text-transform: capitalize;
+}
+
+tbody tr:nth-child(even) {
+  background-color: #0000000b;
+}
+
+tbody tr {
+  --delay: 0.1s;
+  transition: 0.5s ease-in-out var(--delay), background-color 0s;
+}
+
+tbody tr.hide {
+  opacity: 0;
+  transform: translateX(100%);
+}
+
+tbody tr:hover {
+  background-color: #fff6 !important;
+}
+
+tbody tr td,
+tbody tr td p,
+tbody tr td img {
+  transition: 0.2s ease-in-out;
+}
+
+tbody tr.hide td,
+tbody tr.hide td p {
+  padding: 0;
+  font: 0 / 0 sans-serif;
+  transition: 0.2s ease-in-out 0.5s;
+}
+
+.product_image {
+  width: 80px;
+  height: 80px;
+  object-fit: contain;
+  border-radius: 4px;
+  margin: 0 10px;
+}
+
+.product_name {
+  font-weight: 600;
+  opacity: 0.7;
+  font-size: 14px;
+}
+
+.product_des {
+  opacity: 0.7;
+  line-height: 2rem;
+  letter-spacing: 2px;
+  font-size: 14px;
+  margin-top: 0;
+}
+
+.product_sku,
+.product_price {
+  opacity: 0.7;
+}
+
+.product_body button {
+  padding: 12px 20px;
+  border: none;
+  background-color: rgb(0, 157, 255);
+  color: white;
+  border-radius: 4px;
+  cursor: pointer;
+  outline: none;
+  margin-top: 20px;
+  transition: all 0.5s ease;
+}
+
+.switch {
+  position: relative;
+  display: inline-block;
+  width: 60px;
+  height: 34px;
+}
+
+.switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #ccc;
+  -webkit-transition: 0.4s;
+  transition: 0.4s;
+}
+
+.slider:before {
+  position: absolute;
+  content: "";
+  height: 26px;
+  width: 26px;
+  left: 4px;
+  bottom: 4px;
+  background-color: white;
+  -webkit-transition: 0.4s;
+  transition: 0.4s;
+}
+
+input:checked + .slider {
+  background-color: #2196f3;
+}
+
+input:focus + .slider {
+  box-shadow: 0 0 1px #2196f3;
+}
+
+input:checked + .slider:before {
+  -webkit-transform: translateX(26px);
+  -ms-transform: translateX(26px);
+  transform: translateX(26px);
+}
+
+/* Rounded sliders */
+.slider.round {
+  border-radius: 34px;
+}
+
+.slider.round:before {
+  border-radius: 50%;
+}
