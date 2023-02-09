@@ -16,7 +16,7 @@ const Home = () => {
 
   useEffect(() => {
     const fetchProducts = async () => {
-      const { data } = await axios.get("http://localhost:5000/v1/products");
+      const { data } = await axios.get("https://inovant-solutions-backend.onrender.com/v1/products");
       setProducts(data.products);
     };
     fetchProducts();
@@ -87,7 +87,7 @@ const Home = () => {
       });
 
       const response = await axios.post(
-        `http://localhost:5000/v1/products`,
+        `https://inovant-solutions-backend.onrender.com/v1/products`,
         formData,
         {
           headers: {
@@ -97,16 +97,18 @@ const Home = () => {
       );
       setImageUrls(response.data.images);
       setProducts([...products, response.data.product]);
+      setName("");
+      setDescription("");
+      setPrice("");
+      setImages([]);
+      setProductFiles([])
+      setSku("");
       return response.data;
     } catch (error) {
       console.log(error.message);
     }
 
-    setName("");
-    setDescription("");
-    setPrice("");
-    setImages([]);
-    setSku("");
+   
   };
 
   const values = {

@@ -4,7 +4,7 @@ import "./ProductList.css";
 const ProductList = ({ products, setProducts }) => {
   const handleToggleActive = async (id) => {
     try {
-      const res = await axios.patch(`http://localhost:5000/v1/products/${id}`, {
+      const res = await axios.patch(`https://inovant-solutions-backend.onrender.com/v1/products/${id}`, {
         active: !products.find((product) => product._id === id).active,
       });
       setProducts(
@@ -68,7 +68,7 @@ const ProductList = ({ products, setProducts }) => {
                   <td className="product_des">{product.description}</td>
                   <td>
                     <div className="table_image">
-                      {product.images.map((image, index) => (
+                      {product?.images.map((image, index) => (
                         <img
                           key={index}
                           src={image.url}
@@ -79,13 +79,13 @@ const ProductList = ({ products, setProducts }) => {
                     </div>
                   </td>
                   <td>
-                    <label class="switch">
+                    <label className="switch">
                       <input
                         type="checkbox"
                         checked={product.active}
                         onChange={() => handleToggleActive(product._id)}
                       />
-                      <span class="slider round"></span>
+                      <span className="slider round"></span>
                     </label>
                     {/* <input
                       type="checkbox"
