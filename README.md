@@ -1,6 +1,6 @@
 # Inovant Solutions
 
-Site LINK:   https://inovant-solutions.netlify.app
+Site Link:   https://inovant-solutions.netlify.app
 
 ### Backend : NodeJS, ExpressJS, MongoDB, REST API
 
