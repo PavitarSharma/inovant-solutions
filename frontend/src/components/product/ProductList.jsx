@@ -1,4 +1,5 @@
 import axios from "axios";
+import FormatPrice from "../../utils/PriceFormat";
 import "./ProductList.css";
 
 const ProductList = ({ products, setProducts }) => {
@@ -63,7 +64,7 @@ const ProductList = ({ products, setProducts }) => {
               return (
                 <tr key={product._id}>
                   <td className="product_name">{product.name}</td>
-                  <td className="product_price">{product.price}</td>
+                  <td className="product_price">{<FormatPrice price={product.price} />}</td>
                   <td className="product_sku">{product.sku}</td>
                   <td className="product_des">{product.description}</td>
                   <td>
